@@ -31,7 +31,7 @@ else
 #******************************
 # Creating app service plan if not exisiting
 
-$appsvcplan = Get-AzureRmAppServicePlan -ResourceGroupName $resourceGroupName -Name $appServicePlan 
+$appsvcplan = Get-AzureRmAppServicePlan -ResourceGroupName $resourceGroupName -Name $appServicePlan -ErrorAction SilentlyContinue
 
 if (!$appsvcplan)
 {
