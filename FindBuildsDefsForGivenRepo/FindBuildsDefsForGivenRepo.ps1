@@ -44,7 +44,8 @@ else
 {
     foreach($buildDef in $tfvcBuidDefs.value) # print all build defs
     {
-        $report = $report + '<li style="color:green" > <a target="_blank" href="' + $buildDef._links.web.href + '" >' +  $buildDef.name + '</a> Default Branch to Build: '+ $buildDef.repository.defaultBranch + '</li>'
+        $buildUrl = $collectionUri + '/' + $teamProjectName + '/_build?definitionId=' + $buildDef.id
+        $report = $report + '<li style="color:green" > <a target="_blank" href="' + $buildUrl + '" >' +  $buildDef.name + '</a> Default Branch to Build: '+ $buildDef.repository.defaultBranch + '</li>'
     }
 }
 
@@ -89,7 +90,8 @@ if ($gitReposFiltered.count -ge 1)
         {
             foreach($buildDef in $buildDefs.value)
             {
-                $report = $report + '<li style="color:green" > <a target="_blank" href="' + $buildDef._links.web.href + '" >' +  $buildDef.name + '</a> Default Branch to Build: '+ $buildDef.repository.defaultBranch + '</li>'
+                $buildUrl = $collectionUri + '/' + $teamProjectName + '/_build?definitionId=' + $buildDef.id
+                $report = $report + '<li style="color:green" > <a target="_blank" href="' + $buildUrl + '" >' +  $buildDef.name + '</a> Default Branch to Build: '+ $buildDef.repository.defaultBranch + '</li>'
             }
         }
 
