@@ -1,0 +1,1 @@
+.\FindPullRequests.ps1 -token 'PAT' -collectionUri 'https://dev.azure.com/OrgName' -teamProjectName 'teamprojectname' -prStatuses @('active','completed')
